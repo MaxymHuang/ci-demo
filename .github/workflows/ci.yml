@@ -9,7 +9,7 @@ jobs:
   linux-fast:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -33,7 +33,7 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -54,8 +54,11 @@ jobs:
       - name: Package
         shell: pwsh
         run: |
+          $exe = Get-ChildItem -Path build -Recurse -Filter xri_demo.exe | Select-Object -First 1
+          if (-not $exe) { throw "xri_demo.exe not found under build/" }
+          Write-Host "Packaging $($exe.FullName)"
           New-Item -ItemType Directory -Path deploy | Out-Null
-          Copy-Item build/src/app/Release/xri_demo.exe deploy/
+          Copy-Item $exe.FullName deploy/
           windeployqt --release --no-translations --no-system-d3d-compiler deploy/xri_demo.exe
           Compress-Archive -Path deploy/* -DestinationPath xri_demo_win64.zip
 
