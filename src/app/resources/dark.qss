@@ -1,0 +1,127 @@
+/* Industrial dark theme for the XRI demo. */
+
+QWidget {
+    background-color: #161b22;
+    color: #e6edf3;
+    font-size: 13px;
+}
+
+QMainWindow, QStatusBar {
+    background-color: #0d1117;
+}
+
+QListWidget#sidebarList {
+    background-color: #0d1117;
+    border: none;
+    border-right: 1px solid #30363d;
+    font-size: 14px;
+    outline: none;
+}
+
+QListWidget#sidebarList::item {
+    padding: 14px 16px;
+    border-bottom: 1px solid #21262d;
+}
+
+QListWidget#sidebarList::item:selected {
+    background-color: #1f6feb;
+    color: white;
+}
+
+QListView, QListWidget {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+}
+
+QListView::item:selected {
+    background-color: #1f6feb;
+    color: white;
+}
+
+QPushButton, QToolButton {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 6px 14px;
+}
+
+QPushButton:hover, QToolButton:hover {
+    background-color: #30363d;
+}
+
+QPushButton:pressed, QToolButton:pressed, QToolButton:checked {
+    background-color: #1f6feb;
+    border-color: #1f6feb;
+    color: white;
+}
+
+QPushButton:disabled {
+    color: #5c6470;
+}
+
+QPushButton#startScanButton, QPushButton#runInspectionButton {
+    background-color: #238636;
+    border-color: #2ea043;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+}
+
+QPushButton#startScanButton:hover, QPushButton#runInspectionButton:hover {
+    background-color: #2ea043;
+}
+
+QPushButton#startScanButton:disabled, QPushButton#runInspectionButton:disabled {
+    background-color: #21262d;
+    border-color: #30363d;
+    color: #5c6470;
+}
+
+QGroupBox {
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 8px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 8px;
+    color: #8b949e;
+}
+
+QSpinBox, QDoubleSpinBox, QComboBox {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+QProgressBar {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    text-align: center;
+}
+
+QProgressBar::chunk {
+    background-color: #1f6feb;
+    border-radius: 3px;
+}
+
+QGraphicsView {
+    border: 1px solid #30363d;
+    border-radius: 4px;
+}
+
+QLabel#scanPreview {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 4px;
+    color: #5c6470;
+}
+
+QStatusBar QLabel {
+    color: #8b949e;
+}
